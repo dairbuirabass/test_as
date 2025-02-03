@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductPriceController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ProductPriceController::class, 'index']);
+Route::post('/calculate', [ProductPriceController::class, 'calculate'])->name('calculate');
